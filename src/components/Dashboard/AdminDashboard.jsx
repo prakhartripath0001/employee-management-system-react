@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import Header from '../../other/Header';
 
 const AdminDashboard = () => {
   const { user, logoutUser } = useContext(AuthContext);
@@ -11,29 +12,7 @@ const AdminDashboard = () => {
       {/* Background ambient glow bubbles */}
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
-      {/* Navbar */}
-      <header className="border-b border-zinc-800/80 bg-zinc-950/60 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-extrabold text-white text-lg shadow-lg shadow-indigo-500/20">
-              A
-            </div>
-            <div>
-              <h1 className="text-lg font-bold tracking-tight bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
-                Synergy
-              </h1>
-              <p className="text-[10px] text-zinc-500 font-semibold tracking-wider uppercase">Admin Portal</p>
-            </div>
-          </div>
-
-          <button
-            onClick={logoutUser}
-            className="px-4 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 active:scale-[0.98] text-zinc-300 hover:text-white font-medium rounded-xl text-sm transition-all duration-200 flex items-center gap-2"
-          >
-            Sign Out
-          </button>
-        </div>
-      </header>
+      <Header />
 
       {/* Main Content */}
       <main className="flex-grow max-w-7xl w-full mx-auto px-6 py-12 flex flex-col justify-center items-center text-center gap-6">
